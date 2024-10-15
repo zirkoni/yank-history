@@ -1,16 +1,16 @@
 ""
 " directory where yank history is stored
-let g:yank_history_dir=$HOME . "/.local/share/yank_history"
+let g:yank_history_dir = get(g:, 'yank_history_dir', $HOME . "/.local/share/yank_history")
 
 ""
 " temporary directory for yank history
-let g:yank_history_tmp_dir = yank_history_dir . "-tmp"
+let g:yank_history_tmp_dir = get(g:, 'yank_history_tmp_dir', yank_history_dir . "-tmp")
 
 ""
 " maximum number of yank to keep:
 " 0 or less means keeping all of them.
 " Default value is 20
-let g:yank_history_max_size = 20
+let g:yank_history_max_size = get(g:, 'yank_history_max_size', 20)
 
 let s:yank_history_script_dir = expand('<sfile>:p:h')
 let s:yank_history_last=""
